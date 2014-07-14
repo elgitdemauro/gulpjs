@@ -1,0 +1,11 @@
+body {
+  background: aquamarine; }
+  body div {
+    box-shadow: 2px 2px 2px #ccc;
+    border-radius: 5px;
+    transform-color: red; }
+    body div a {
+      text-decoration: none; }
+      body div a:hover {
+        color: red;
+        opacity: .5; }

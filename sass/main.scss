@@ -1,0 +1,15 @@
+body{
+	background: aquamarine;
+	div{
+		box-shadow: 2px 2px 2px #ccc;
+		border-radius: 5px;
+		transform-color: red;
+		a{
+			text-decoration: none;
+			&:hover{
+				color: red;
+				opacity: .5;
+			}
+		}
+	}
+}
