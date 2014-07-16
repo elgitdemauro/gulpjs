@@ -5,6 +5,12 @@
 - Browser-sync
 - Autopefixer
 
+First install dependecies
+
+<pre>
+	npm install
+</pre>
+
 Run server
 
 <pre>
