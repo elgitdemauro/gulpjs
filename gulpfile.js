@@ -1,6 +1,6 @@
 
-var gulp 		= require('gulp'),
-	browserSync = require('browser-sync'),
+var     gulp 		= require('gulp'),
+	browserSync     = require('browser-sync'),
 	prefixer 	= require('gulp-autoprefixer'),
 	sass 		= require('gulp-ruby-sass'),
 	reload 		= browserSync.reload;
@@ -9,8 +9,9 @@ var gulp 		= require('gulp'),
 gulp.task('styles', function() {
 	return gulp.src('sass/*.scss')
 	.pipe(sass({
-		noCache	: true, 
-		style	: "nested" // compact, 
+		sourcemap  : true,
+		noCache    : true, 
+		style      : "nested" // compact, 
 	}))
 	.pipe(gulp.dest('css'))
 	.pipe(reload({stream:true}))
