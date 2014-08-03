@@ -1,15 +1,14 @@
+@mixin border-radius($radius) {
+	border-radius: $radius;
+}
+$rojo 	: #ff0000;
+
 body{
-	background: aquamarine;
+	background-size: cover;
 	div{
+		background: linear-gradient(top, yellow, blue);
+		@include border-radius(10px);
 		box-shadow: 2px 2px 2px #ccc;
-		border-radius: 5px;
-		transform-color: red;
-		a{
-			text-decoration: none;
-			&:hover{
-				color: red;
-				opacity: .5;
-			}
-		}
+		transform-color: $rojo;
 	}
 }

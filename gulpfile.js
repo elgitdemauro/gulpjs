@@ -1,53 +1,66 @@
 
-var     gulp 		= require('gulp'),
-	browserSync     = require('browser-sync'),
-	prefixer 	= require('gulp-autoprefixer'),
+var gulp 		= require('gulp'),
+	browserSync = require('browser-sync'),
+	prefix 		= require('gulp-autoprefixer'),
 	sass 		= require('gulp-ruby-sass'),
 	reload 		= browserSync.reload;
 
 
+// watch styles
 gulp.task('styles', function() {
 	return gulp.src('sass/*.scss')
 	.pipe(sass({
-		sourcemap  : true,
-		noCache    : true, 
-		style      : "nested" // compact, 
+		sourcemap	: false,
+		noCache		: true, 
+		style		: "nested" // compact, nested
 	}))
-	.pipe(gulp.dest('css'))
 	.pipe(reload({stream:true}))
-	.pipe(prefixer([ 
-		'ie >= 8',
-		'ie >= 7',
-		'ie_mob >= 10',
-		'ff >= 30',
-		'chrome >= 34',
-		'safari >= 7',
-		'opera >= 23',
-		'ios >= 7',
-		'android >= 4.4',
-		'bb >= 10'
-		], {cascade: true }));
+	.pipe(prefix(["last 2 versions", "> 1%", "Explorer 7", "Explorer 8", "Android 2"], { cascade: true }))
+    .pipe(gulp.dest('css'));
 });
+
+
+// watch js
+gulp.task('js', function () {
+	return gulp.src('js/*js')
+	.pipe(browserSync.reload({stream:true}));
+});
+
+
+// watch js
+gulp.task('img', function () {
+	return gulp.src('img/*')
+	.pipe(browserSync.reload({stream:true}));
+});
+
 
 // start server
 gulp.task('browser-sync', function() {
-    browserSync({
-    	logLevel: "info",
-    	logConnections: true,
-    	notify: false,
-        server: {
-            baseDir: "./"
-        }
-    });
+	browserSync.init(["*html"],{
+		logLevel: "info",
+		logConnections: true,
+		notify: false,
+		host: "192.123.456",
+		port: 8000,
+		open: true,
+		//files: "app/css/*.css",	// BrowserSync can watch your files as you work
+		server: {
+			baseDir: "./" 			// Serve files
+		}
+	});
 });
+
 
 // refresh all browser
 gulp.task('refresh', function () {
-    browserSync.reload();
+	browserSync.reload();
 });
 
 
+// task default
 gulp.task('default', ['browser-sync'], function(){
 	gulp.watch("sass/*.scss", ['styles']);
-    gulp.watch("*.html", ['refresh']);
+	gulp.watch("js/*", ['js']);
+	gulp.watch("img/*", ['img']);
 });
+

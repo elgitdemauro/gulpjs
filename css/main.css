@@ -1,11 +1,12 @@
 body {
-  background: aquamarine; }
+  -webkit-background-size: cover cover;
+          background-size: cover; }
   body div {
-    box-shadow: 2px 2px 2px #ccc;
-    border-radius: 5px;
-    transform-color: red; }
-    body div a {
-      text-decoration: none; }
-      body div a:hover {
-        color: red;
-        opacity: .5; }
+    background: -webkit-gradient(linear, left top, left bottom, from(yellow), to(blue));
+    background: -webkit-linear-gradient(top, yellow, blue);
+    background: linear-gradient(top, yellow, blue);
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+            box-shadow: 2px 2px 2px #ccc;
+    transform-color: #ff0000; }
