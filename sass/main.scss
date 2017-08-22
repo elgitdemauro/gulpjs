@@ -1,14 +1,2 @@
-@mixin border-radius($radius) {
-	border-radius: $radius;
-}
-$rojo 	: #ff0000;
+@import '_variables';
 
-body{
-	background-size: cover;
-	div{
-		background: linear-gradient(top, yellow, blue);
-		@include border-radius(10px);
-		box-shadow: 2px 2px 2px #ccc;
-		transform-color: $rojo;
-	}
-}

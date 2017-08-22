@@ -1,12 +1,2 @@
-body {
-  -webkit-background-size: cover cover;
-          background-size: cover; }
-  body div {
-    background: -webkit-gradient(linear, left top, left bottom, from(yellow), to(blue));
-    background: -webkit-linear-gradient(top, yellow, blue);
-    background: linear-gradient(top, yellow, blue);
-    -webkit-border-radius: 10px;
-            border-radius: 10px;
-    -webkit-box-shadow: 2px 2px 2px #ccc;
-            box-shadow: 2px 2px 2px #ccc;
-    transform-color: #ff0000; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmNzcyIsInNvdXJjZXNDb250ZW50IjpbXX0= */
