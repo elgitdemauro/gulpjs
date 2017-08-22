@@ -1,5 +1,4 @@
-## Starter Kit Front-end 
-### Gulpjs + Babeljs 
+## Gulpjs Starter Kit Front-end 
 
 - HTML5 Boilerplate
 - Ruby-Sass
@@ -12,7 +11,7 @@ First install dependecies
 	npm i
 </pre>
 
-Run server
+Run server and watching
 
 <pre>
 	gulp
